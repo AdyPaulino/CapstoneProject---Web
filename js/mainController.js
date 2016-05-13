@@ -4,13 +4,20 @@ app.controller('mainController', function($scope) {
     $scope.groupName = "TAALK";
     $scope.groupMembers = "Tiago, Ady, Alex, Lalit and Kevin";
     
-    $scope.device = [];
-    $scope.device.pathId = 'svg_device1';
-    $scope.device.image = 'img/butterfly_32x32.png';
-    $scope.device.path = 'M1,216 L240,45 L480,216 L387,495 L96,495 L1,216 z';
+    $scope.device = {'width': 32, 
+                     'height': 32,
+                    'initialX': 0,
+                    'initialY': 0,
+                    'pathId': 'svg_device1',
+                    'image': 'img/butterfly_32x32.png',
+                    'path': 'M1,216 L240,45 L480,216 L387,495 L96,495 L1,216 z'}
+    
+    //$scope.device.pathId = 'svg_device1';
+    //$scope.device.image = 'img/butterfly_32x32.png';
+    //$scope.device.path = 'M1,216 L240,45 L480,216 L387,495 L96,495 L1,216 z';
     
     $scope.makeUrl = function() {
-      return new Sting("#" + $scope.device[0]);
+      return "#" + $scope.device.id;
     };
     
     $scope.showDeviceInfo = function(id) {

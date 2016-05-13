@@ -26,10 +26,10 @@
                             <circle id="pointC" cx="435" cy="350" r="3" />
                         </g>
                         
-                        <path id="svg_device1" d="M1,216 L240,45 L480,216 L387,495 L96,495 L1,216 z" class="hidden"/>
-                        <image x="0" y="0" width="32" height="32" xlink:href="img/butterfly_32x32.png" ng-click="showDeviceInfo('1')">
+                        <path ng-attr-id="{{device.pathId}}" ng-attr-d="{{device.path}}" class="hidden"/>
+                        <image ng-attr-x="{{device.initialX}}" ng-attr-y="{{device.initialY}}" ng-attr-width="{{device.width}}" ng-attr-height="{{device.height}}" xlink:href="{{device.image}}" ng-click="showDeviceInfo('1')">
                             <animateMotion dur="30s" repeatCount="indefinite">
-                               <mpath xlink:href="#svg_device1"/>
+                               <mpath xlink:href="{{'#' + device.pathId}}"/>
                             </animateMotion>
                         </image>
                         
