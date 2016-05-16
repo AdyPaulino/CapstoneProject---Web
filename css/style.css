@@ -1,6 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Autour+One);
+
 div.device {
     width: 50px;
     height:50px;
      background-color:red;
     position:fixed; 
+}
+
+.title {
+    font-family: 'Autour One', cursive;
+    font-size: 3vw;
+    color: white;
+}
+
+#head{
+    background-color: #78c7ee;
+    height: 5vw;
 }
