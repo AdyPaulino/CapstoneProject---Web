@@ -27,24 +27,14 @@
                         </g>
                         <g ng-repeat="device in deviceList track by $index">
                             <path ng-attr-id="{{device.pathId}}" ng-attr-d="{{device.path}}" class="hidden"/>
-                            <a data-toggle="collapse" href="#collapse1"><image ng-attr-x="{{device.initialX}}" ng-attr-y="{{device.initialY}}" ng-attr-width="{{device.width}}" ng-attr-height="{{device.height}}" xlink:href="{{device.image}}" ng-click="showDeviceInfo('1')" >
-                                <animateMotion dur="100s" repeatCount="indefinite">
+                            <a data-toggle="collapse" href="#collapse1"><image ng-attr-x="{{device.initialX}}" ng-attr-y="{{device.initialY}}" ng-attr-width="{{device.width}}" ng-attr-height="{{device.height}}" xlink:href="{{device.image}}" ng-click="showDeviceInfo(device.pathId)" >
+                                <animateMotion dur="10s" repeatCount="indefinite">
                                    <mpath xlink:href="{{'#' + device.pathId}}"/>
                                 </animateMotion>
-                                <title><div ng-attr-title="{{showDeviceName(device.pathId)}}">{{device.name}}</div></title>
+                                <title><div ng-attr-title="{{showDeviceName(device.pathId)}}">{{deviceName}}</div></title>
                             </image>
                             </a>
                         </g>
-                        
-                            
-                        
-                        
-                        <path id="svg_device2" d="M240,45 L1,216 L480,216 L387,495 L96,495 L1,216 z" class="hidden"/>
-                        <image x="0" y="0" width="32" height="32" xlink:href="img/icon.svg" ng-click="showDeviceInfo('2')" data-toggle="tooltip" data-placement="top" title="showDeviceName('2')">
-                            <animateMotion dur="50s" repeatCount="indefinite">
-                               <mpath xlink:href="#svg_device2"/>
-                            </animateMotion>
-                        </image>
                     </svg>
                 </div>
                 <div class="col-md-2 col-sm-12 col-lg-3">
