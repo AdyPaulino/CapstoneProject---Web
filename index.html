@@ -17,7 +17,7 @@
                 <div class="col-md-10 col-sm-12 col-lg-9">
                     <svg id="svg_map" viewBox="0 0 900 510" xmlns="http://www.w3.org/2000/svg" version="1.1" xlink="http://www.w3.org/1999/xlink">
                         <g id="first_floor_outline" stroke = "#000" stroke-width = "1" fill = "none">
-                            <path stroke-width="2" id="svg_3" d="M1,216 L240,45 L480,216 L387,495 L96,495 L1,216 z"/>
+                            <path stroke-width="2" ng-attr-id="{{map.id}}" ng-attr-d="{{map.path}}"/>
                         </g>
                         <!-- Mark beacon points -->
                         <g ng-repeat="beacon in beaconList track by $index" stroke="red" stroke-width="3" fill="red">

@@ -5,6 +5,11 @@ app.controller('mainController', function($scope) {
     $scope.groupName = "TAALK";
     $scope.groupMembers = "Tiago, Ady, Alex, Lalit and Kevin";
     
+    //floor map
+    $scope.map = {'path': 'M1,216 L240,45 L480,216 L387,495 L96,495 L1,216 z',
+                 'id': 'svg_3'};
+    
+    
     //device list
     $scope.device = {};
     var device1 = {'width': 32, 
