@@ -20,15 +20,13 @@
                             <path stroke-width="2" id="svg_3" d="M1,216 L240,45 L480,216 L387,495 L96,495 L1,216 z"/>
                         </g>
                         <!-- Mark beacon points -->
-                        <g stroke="red" stroke-width="3" fill="red">
-                            <circle id="pointA" cx="99" cy="145" r="3" />
-                            <circle id="pointB" cx="315" cy="100" r="3" />
-                            <circle id="pointC" cx="435" cy="350" r="3" />
+                        <g ng-repeat="beacon in beaconList track by $index" stroke="red" stroke-width="3" fill="red">
+                            <circle ng-attr-id="{{beacon.id}}" ng-attr-cx="{{beacon.coordinates.x}}" ng-attr-cy="{{beacon.coordinates.y}}" ng-attr-r="{{beacon.r}}" />
                         </g>
                         <g ng-repeat="device in deviceList track by $index">
                             <path ng-attr-id="{{device.pathId}}" ng-attr-d="{{device.path}}" class="hidden"/>
                             <a data-toggle="collapse" href="#collapse1"><image ng-attr-x="{{device.initialX}}" ng-attr-y="{{device.initialY}}" ng-attr-width="{{device.width}}" ng-attr-height="{{device.height}}" xlink:href="{{device.image}}" ng-click="showDeviceInfo(device.pathId)" >
-                                <animateMotion dur="10s" repeatCount="indefinite">
+                                <animateMotion dur="100s" repeatCount="indefinite">
                                    <mpath xlink:href="{{'#' + device.pathId}}"/>
                                 </animateMotion>
                                 <title><div ng-attr-title="{{showDeviceName(device.pathId)}}">{{deviceName}}</div></title>
